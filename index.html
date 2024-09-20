@@ -13,6 +13,12 @@
 body {
   background-color: light-dark(#eee, #444);
   color: light-dark(black, white);
+  font-size: 14pt;
+  font-family: Arial, helvetica, sans-serif;
+}
+a {
+  text-decoration: none;
+  font-weight:bold;
 }
 header {
   border-bottom: 1px solid grey;
@@ -21,12 +27,12 @@ header .logo {
   vertical-align: middle;
   width: 48px;
 }
-
 content {
   display: block;
   margin-top: 1em;
   margin-bottom: 1em;
   width: 97vw;
+  min-height: 60vh;
 }
 
 footer {
@@ -35,6 +41,9 @@ footer {
   line-height: 2em;
   color: grey;
   font-style: italic;
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
 }
   </style>
   </head>
@@ -260,7 +269,7 @@ footer {
 </header>
 
 <content>
-The content goes here.
+  <p>En attendant le contenu pour les développeurs, vous pouvez au moins <a href="./game/">passer le temps en jouant au Jeu du Pendu</a></p>
 </content>
 
 <footer>Ampere Software Technology</footer>
