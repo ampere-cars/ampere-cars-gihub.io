@@ -1,0 +1,211 @@
+:root {
+  color-scheme: light dark;
+
+  --header-background-color: light-dark(#f0f0f0, #113);
+  --header-text-color: light-dark(black, white);
+  
+  --header-title-text-color: light-dark(#222, #f0f0e0);
+  --header-title-shadow-color: light-dark(#222, #ddd);
+  
+  --content-background-color: light-dark(white, #223);
+  --content-text-color: light-dark(black, white);
+
+  --footer-background-color: light-dark(#f0f0f0, #113);
+  --footer-text-color: light-dark(grey, grey);
+  
+  --menu-border-color: light-dark(#226, #448);
+  --menu-hover-background-color: light-dark(bisque, #224);
+  --menu-active-background-color: light-dark(bisque, black);
+  
+  --menu-width: 340px;
+}
+
+.lorem-ipsum {
+  min-height: 50vh;
+}
+
+body {
+  background-color: var(--content-background-color);
+  color: var(--content-text-color);
+  font-size: 14pt;
+  font-family: Arial, helvetica, sans-serif;
+  margin:0;
+  padding:0;
+}
+h1, h2, h3, h4, h5, h6 {
+  margin:0;
+}
+
+a, a:visited {
+  text-decoration: none;
+  font-weight:bold;
+  color: light-dark(#5d9dde, orange);
+}
+a:hover {
+  text-decoration: underline;
+}
+
+a[name],
+a[name]:visited,
+a[name]:hover {
+  text-decoration: none;
+  color: var(--content-text-color);
+}
+
+.v-hidden {
+ visibility:hidden; 
+}
+.d-none {
+ display:none; 
+}
+
+.page {
+  display: grid;
+  grid-template-columns: 10% auto calc(var(--menu-width)) 10%;
+  grid-template-rows: 5em calc(100vh - 9em) 2em; /* height limitation on second row */
+  grid-template-areas: 
+  "header header  header header" 
+  ".      content aside  ."
+  "footer footer  footer footer";
+  overflow-x: hidden;
+}
+
+header,
+main,
+footer {
+  padding:0.25em;
+  max-width:100%;
+}
+
+header {
+  grid-area: header;
+  display: grid;
+  grid-template-columns: 10% auto auto 10%;
+  grid-template-areas:
+    ". logo menu .";
+  grid-column-gap: 1em;
+  justify-content: space-between;
+  align-items: center;
+  height: 5em;
+  max-height: 5em;
+  padding: 0 12px 0 24px;
+  background-color: var(--header-background-color);
+  color: var(--header-text-color);
+}
+header .logo {
+  grid-area: logo;  
+  align-self: center;
+}
+header img.logo {
+  vertical-align: middle;
+  width: 48px;
+}
+header .title {
+  font-size: 150%;
+  font-weight: bold;
+  color: var(--header-title-text-color);
+}
+header nav {
+  grid-area: menu;
+  margin-right: 2em;
+}
+header nav a.header-nav-item {
+  display: inline-block;
+  padding: 0.5em;
+  min-width: 8ch;
+  text-align: center;
+}
+header nav a.header-nav-item.active {
+  border-bottom: 3px solid var(--menu-border-color);
+}
+header nav a.header-nav-item:hover {
+  text-decoration: none;
+  border-bottom: 3px solid var(--menu-border-color);
+}
+
+main {
+  grid-area: content;
+  min-height: max-content;
+}
+
+aside {
+  grid-area: aside;
+  position: sticky;
+  top: 0.5em;
+  width: max-content;
+  height: max-content;
+  padding: 2em;
+}
+
+aside {
+  border: 1px solid grey;
+}
+
+footer {
+  grid-area: footer;
+  font-size: small;
+  line-height: 2em;
+  color: grey;
+  font-style: italic;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: var(--footer-background-color);
+  color: var(--footer-text-color);
+  border-top: 1px solid var(--menu-border-color);
+}
+
+footer a.easter-egg-link {
+  color: var(--footer-text-color);
+}
+footer a.easter-egg-link:hover {
+  text-decoration: none;
+}
+
+
+@media screen and (max-width: 1410px) {
+  body {
+    font-size: 12pt;
+  }
+  .page {
+    grid-template-columns: 0.1em auto var(--menu-width) 0.1em;
+  }
+  header {
+    grid-template-columns: 1% auto auto 1%;
+  }
+  header img.logo {
+    width: 40px;
+  }
+  header .title {
+    font-size: 120%;
+  }
+  header a.header-nav-item {
+    padding: 0.25em;
+  }
+}
+
+@media screen and (max-width: 928px) {
+  body {
+    font-size: 10pt;
+  }
+  .page {
+    x-grid-template-columns: 0 auto calc(0.75 * var(--menu-width)) 0;
+    grid-template-columns: 0 auto 0;
+  }
+  header {
+    grid-template-columns: 0 max-content auto 0;
+  }
+  header .title {
+    font-size: 110%;
+    display: none;
+  }
+  header a.header-nav-item {
+    padding: 0.1em;
+  }
+  aside {
+    display: none;
+  }
+}
+
+.font-medium {
+}
