@@ -241,14 +241,14 @@ const GAME = (function(params) {
     HMI.initializeFader();
     i18n.initializeHmiMessages(PARAMETERS.getLanguage());
 
-    DICTIONARY.createIndex();
+    DICTIONARY.initialize({base_dir: "dictionaries", list: "_index.json"})
+    DICTIONARY.buildDictionariesSelector('#dictionaries-selector', true);
+
     const score = PARAMETERS.getScore();
     if ((score.found != null) && (score.total != null)) {
       _wordsFound = score.found;
       _wordsTotal = score.total;
     }
-    _updateScore();
-    _currentPointer = 0;
 
     // W3C
     document.getElementById(HMI.ids.ELEMENT_FADER_ID).addEventListener("animationend", HMI.onFaderAnimationEnd, false);

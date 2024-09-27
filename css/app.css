@@ -189,7 +189,6 @@ footer a.easter-egg-link:hover {
     font-size: 10pt;
   }
   .page {
-    x-grid-template-columns: 0 auto calc(0.75 * var(--menu-width)) 0;
     grid-template-columns: 0 auto 0;
   }
   header {
@@ -205,6 +204,42 @@ footer a.easter-egg-link:hover {
   aside {
     display: none;
   }
+}
+
+@media print {
+  :root {
+    color-scheme: only light;
+  }
+  body {
+    font-size: 10pt;
+  }
+  .page {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 5em auto 2em;
+    grid-template-areas: 
+    "header" 
+    "content"
+    "footer";
+    overflow: hidden;
+  }
+  header {
+    grid-template-columns: 0 max-content auto 0;
+    background-color: transparent
+  }
+  header img.logo {
+    width: 32px;
+  }
+  header .title {
+    font-size: 100%;
+  }
+  header a.header-nav-item {
+    padding: 0.1em;
+  }
+  footer, aside {
+    display: none;
+  }
+
 }
 
 .font-medium {

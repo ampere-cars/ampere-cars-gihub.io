@@ -10,6 +10,7 @@ document.addEventListener(
     for (let img of allHiddenImages) {
       img.classList.remove('hidden');
     }
+    PARAMETERS.init();
 
     const params = new URLSearchParams(document.location.search);
     GAME.initialize(params);
@@ -29,8 +30,16 @@ document.addEventListener(
       // console.log('debug mode activated - click on score element')
     }
     // console.log(DICTIONARY)
+
   }
 );
+
+window.addEventListener(
+  'resize',
+  (ev) => {
+    HMI.setLayout();
+  }
+)
 
 function toggleDebug() {
   if (!debugAllowed) return;

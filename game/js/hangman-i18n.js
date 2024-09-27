@@ -9,6 +9,7 @@ const i18n = (function() {
       no: "Non",
       ok: "OK",
       cancel: "Annuler",
+      dictionary: "Dictionnaire :",
       gameResultMessageBox: {
         TitleSuccess:"BRAVO !",
         TitleFail   :"DESOLÉ !",
@@ -41,6 +42,7 @@ const i18n = (function() {
       no: "Non",
       ok: "OK",
       cancel: "Cancel",
+      dictionary: "Dictionary:",
       gameResultMessageBox: {
         TitleSuccess:"CONGRATULATIONS !",
         TitleFail   :"SORRY !",
@@ -85,6 +87,7 @@ const i18n = (function() {
     // static texts for play and stop game keyboard keys
     document.getElementById("keyPlay").innerHTML = _i18n_data.startGame;
     document.getElementById("keyStop").innerHTML = _i18n_data.stopGame;
+    document.querySelector("span.dictionaries-selector > span").innerHTML = _i18n_data.dictionary;
     PARAMETERS.storeLanguage(_i18n_data.langCode);
     return _i18n_data.langCode;
   }

@@ -15,11 +15,11 @@
 
 <!-- note that settings the defer attribute to hangman.js drop drastically performance (in Chrome lighthouse) from 100% to 54% ! -->
 <script defer src="js/hangman-dictionary.js"></script>
-<script defer src="js/hangman-hmi.min.js"></script>
-<script defer src="js/hangman-storage.min.js"></script>
-<script defer src="js/hangman-i18n.min.js"></script>
-<script defer src="js/hangman-utils.min.js"></script>
-<script defer src="js/hangman-game.min.js"></script>
+<script defer src="js/hangman-hmi.js"></script>
+<script defer src="js/hangman-storage.js"></script>
+<script defer src="js/hangman-i18n.js"></script>
+<script defer src="js/hangman-utils.js"></script>
+<script defer src="js/hangman-game.js"></script>
 <script src="js/hangman.js"></script>
 </head>
 
@@ -45,6 +45,9 @@
    <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
    <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
    <td></td>
+  </tr>
+  <tr id="keyboardRow0">
+   <td colspan="31" class="dictionaries-selector"><span class="dictionaries-selector v-hidden"><span>Dictionnaire :</span> <select id="dictionaries-selector"></select></span></td>
   </tr>
   <tr id="keyboardRow1">
    <td class="keyDisabled" id="keyA" colspan="3">A</td>
@@ -83,9 +86,6 @@
    <td colspan="3"></td>
    <td colspan="4" class="flag" onclick="i18n.initializeHmiMessages('fr')"><div class="f32"><div class="flag fr"></div></div></td>
    <td colspan="4" class="flag" onclick="i18n.initializeHmiMessages('en')"><div class="f32"><div class="flag gb"></div></div></td>
-  </tr>
-  <tr id="keyboardRow4">
-   <td colspan="31"></td>
   </tr>
   <tr id="keyboardRow5">
    <td class="key" id="keyPlay" colspan="8" onclick="GAME.start()"></td>

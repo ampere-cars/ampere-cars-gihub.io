@@ -1,5 +1,5 @@
 * {
-  box-sizing: border:box;
+  box-sizing: border-box;
 }
 
 body {
@@ -11,6 +11,7 @@ body {
   --image-width-with-border: calc(var(--image-width) + 2 * var(--image-border));
   --image-height-with-border: calc(var(--image-height) + 2 * var(--image-border));
   --right-colum-width: calc(var(--container-width) - var(--image-width) - 2 * var(--image-border) - 1.5rem);
+  font-family: Arial, helvetica, sans-serif;
 }
 
 body.small {
@@ -38,9 +39,9 @@ body.large {
 
 #keyboard-container {
   position:absolute;
-  left: calc(var(--image-width-with-border) + 0.5rem);
+  left: calc(var(--image-width-with-border) - 4px);
   right:0.25rem;  
-  width: calc(var(--right-colum-width) + 0.5rem);
+  width: calc(var(--right-colum-width) + 4px);
   min-width: var(--right-colum-width);
   bottom:0.25rem;
   margin:auto;
@@ -49,7 +50,7 @@ body.large {
 #word, #definition, #xkeyboard {
   border-radius:0.5rem;  
   position:absolute;
-  left: calc(var(--image-width-with-border) + 0.5rem);
+  left: calc(var(--image-width-with-border) + 8px);
   right:0.25rem;
   border:1px solid grey;
   width: var(--right-colum-width);
@@ -71,8 +72,8 @@ body.large {
   font-size: 18pt;
   color:white;
   background-color:black;
-  top: 3.75rem;
-  bottom: 11.5rem;
+  top: 3.25rem;
+  bottom: 13rem;
   overflow-y:auto;
   overflow-x:hidden;
   padding:0.25rem;
@@ -317,4 +318,21 @@ td.score {
 }
 #messageBoxButtonClose:hover, #confirmBoxButtonYes:hover, #confirmBoxButtonNo:hover {
   background-color:#cfc;
+}
+
+td.dictionaries-selector {
+  background-color: #222;
+  padding:4px;
+  border-radius: 5px;
+}
+span.dictionaries-selector > span {
+  color: white;
+  font-weight: bold;
+}
+
+.d-none {
+ display: none; 
+}
+.v-hidden {
+ visibility: hidden; 
 }
