@@ -40,16 +40,16 @@ body.large {
 #keyboard-container {
   position:absolute;
   left: calc(var(--image-width-with-border) - 4px);
-  right:0.25rem;  
+  right: 0.25rem;  
   width: calc(var(--right-colum-width) + 4px);
   min-width: var(--right-colum-width);
-  bottom:0.25rem;
-  margin:auto;
+  margin: auto;
+  bottom:-2.75rem;
 }
 
 #word, #definition, #xkeyboard {
-  border-radius:0.5rem;  
   position:absolute;
+  border-radius:0.5rem;  
   left: calc(var(--image-width-with-border) + 8px);
   right:0.25rem;
   border:1px solid grey;
@@ -61,19 +61,21 @@ body.large {
   font-weight:bold;
   color:yellow;
   background-color:black;
-  top: 0.25rem;
-  height:2.5rem;
+  height:3rem;
   line-height:2.5rem;
   text-align:center;
   letter-spacing:0.5rem;
   padding:0.25rem;
+  top: 0;
+  left:4px;
+  width: calc(var(--container-width, 800px) - 20px);
 }
 #definition {
   font-size: 18pt;
   color:white;
   background-color:black;
-  top: 3.25rem;
-  bottom: 13rem;
+  top: 3.5rem;
+  bottom: 10rem;
   overflow-y:auto;
   overflow-x:hidden;
   padding:0.25rem;
@@ -151,7 +153,7 @@ body.large {
 #messageBoxButtons, #confirmBoxButtons {
   position:absolute;
   padding:0.25rem;
-  height: 2rem;
+  height: 2.5rem;
   line-height: 2rem;
   left:0;
   right:0;
@@ -222,7 +224,7 @@ body.large {
 #drawing {
   position:absolute;
   left: 0.25rem;
-  top: 0.25rem;
+  top: 3.5rem;
   width: var(--image-width-with-border);
   height: var(--image-height-with-border);
   text-align:center;

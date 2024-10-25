@@ -23,6 +23,7 @@ const GAME = (function(params) {
 
       // set to uppercase and remove diacritics (accents)
       _normalizedWord = UTILS.removeDiacritics(_currentWord.w.toUpperCase());
+
       // first letter
       firstLetter = _normalizedWord.charAt(0);
       // last letter
@@ -39,6 +40,14 @@ const GAME = (function(params) {
         else if (_normalizedWord.charAt(i) == "-") {
           // hyphen letter, always display
           _displayedWord += "-";
+        }
+        else if (_normalizedWord.charAt(i) == " ") {
+          // space letter, always display
+          _displayedWord += " ";
+        }
+        else if (_normalizedWord.charAt(i) == "'") {
+          // apostrophe letter, always display
+          _displayedWord += "'";
         }
         else {
           _displayedWord += HIDDEN_LETTER;
@@ -241,7 +250,7 @@ const GAME = (function(params) {
     HMI.initializeFader();
     i18n.initializeHmiMessages(PARAMETERS.getLanguage());
 
-    DICTIONARY.initialize({base_dir: "dictionaries", list: "_index.json"})
+    DICTIONARY.initialize({base_dir: "dictionaries", list: "index.json"})
     DICTIONARY.buildDictionariesSelector('#dictionaries-selector', true);
 
     const score = PARAMETERS.getScore();
